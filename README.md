@@ -10,9 +10,9 @@
 
 To start with repository,
 
-> git clone https://github.com/nodesense/99mobiles-react-redux-2018
+> git clone https://github.com/nodesense/91mobiles-react-redux-2018
 
-> cd 99mobiles-react-redux-2018
+> cd 91mobiles-react-redux-2018
 
 > npm install
 
