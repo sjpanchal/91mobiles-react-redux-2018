@@ -27,6 +27,7 @@ var config = {
     app: APP_DIR + '/main.js',
   }, 
 
+  
   output: {
     path: BUILD_DIR,
     filename: '[name].bundle.[hash].js',

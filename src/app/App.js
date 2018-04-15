@@ -13,7 +13,7 @@ import Contact from "./components/Contact";
 import NotFound from "./components/NotFound";
 
 //TODO: lazy loading/code split
-import Cart from "./cart/components/Cart";
+// import Cart from "./cart/components/Cart";
 
 import ProductList from "./product/components/ProductList";
 
@@ -30,6 +30,23 @@ import PropTypes from 'prop-types';
 
 import Login from "./containers/Login";
 import AuthRoute from "./components/AuthRoute";
+
+
+//Lazy load modules, split bigger modules into smaller
+import Loadable from 'react-loadable';
+
+function Loading() {
+    return (
+        <div> 
+          <img src="/assets/loading.gif" />
+        </div>
+    )
+}
+
+const LoadableCartComponent = Loadable({
+    loader: () => import('./cart/components/Cart'),
+    loading: Loading,
+  });
 
 // browser navigation in SPA
 import {BrowserRouter,
@@ -93,7 +110,7 @@ export class App extends React.Component {
 
                         <Route path="/connect" component={CounterReduxContainer} />
 
-                        <Route path="/cart" component={Cart} />
+                        <Route path="/cart" component={LoadableCartComponent} />
 
                         <AuthRoute path="/redux-cart" component={ReduxCart} />
                         
